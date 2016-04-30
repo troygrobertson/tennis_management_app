@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TennisManagementApp</title>
-    <%= csrf_meta_tags %>
-
+<head>
+<!--IF THIS CHANGES NEED TO UPLOAD TO GIT! THIS IS IN THE GITIGNORE FILE-->
+<title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div class="container">
+	<%= render 'layouts/messages'%>
+	<%= yield %>
+	<%= render 'layouts/footer' %>
+	<%= debug(params) if Rails.env.development? %>
+</div>
+</body>
 </html>
