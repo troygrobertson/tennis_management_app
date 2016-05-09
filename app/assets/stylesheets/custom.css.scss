@@ -154,6 +154,10 @@ input {
 .field_with_errors {
 	@extend .has-error;
 }
+div.checkbox-field {
+  display: inline-flex;
+  margin: 11px 0 0;
+}
 /* miscellaneous */
 .debug_dump {
 clear: both;
